@@ -245,3 +245,19 @@ Line coverage = 95.83% буюу ойролцоогоор 96%.
 ## 8. AI ашигласан тухай
 
 Лабораторийн ажлын явцад AI хэрэгслийг Data Flow Testing ойлголтыг тайлбарлуулах, DU хосуудыг шинжлэх, тестийн хувилбар боловсруулах болон тайлангийн бүтэц гаргахад туслах зорилгоор ашигласан. Код, тестүүд болон туршилтын үр дүнг локал орчинд ажиллуулж шалгасан.
+]633;E;echo "";243ae723-beb5-49de-bc24-32164482e860]633;C
+## Орчны хувилбарын командын гаралт
+### java -version
+```text
+openjdk version "21.0.13.0.3" 2026-10-24
+OpenJDK Runtime Environment (build 21.0.13.0.3+1-1-24.04.1-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.13.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)
+```
+### mvn -version
+```text
+[1mApache Maven 3.8.7[m
+Maven home: /usr/share/maven
+Java version: 21.0.13.0.3, vendor: Ubuntu, runtime: /usr/lib/jvm/java-21-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "7.0.0-43-generic", arch: "amd64", family: "unix"
+```
