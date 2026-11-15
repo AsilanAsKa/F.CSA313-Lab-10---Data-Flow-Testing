@@ -39,4 +39,16 @@ class BonusTest {
                 DataFlowTargets.bonus(
                         new int[]{1}, 2));
     }
+    @Test
+void absenceResetsConsecutiveStreak() {
+    assertEquals(0,
+            DataFlowTargets.bonus(
+                    new int[]{1, 1, 1, 1, 0, 1}, 6));
+}
+@Test
+void fiveConsecutiveDaysBelowThreshold() {
+    assertEquals(3,
+            DataFlowTargets.bonus(
+                    new int[]{1, 1, 1, 1, 1}, 6));
+}
 }
