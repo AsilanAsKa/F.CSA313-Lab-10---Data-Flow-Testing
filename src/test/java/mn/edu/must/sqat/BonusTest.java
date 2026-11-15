@@ -53,4 +53,9 @@ class BonusTest {
         assertEquals(0,
                 DataFlowTargets.bonus(new int[]{1, 0, 1, 1, 1, 1}, 6));
     }
+        @Test
+    void allAbsentDaysUseInitialBestAtFinalCheck() {
+        assertEquals(0,
+                DataFlowTargets.bonus(new int[]{0, 0, 0}, 1));
+    }
 }

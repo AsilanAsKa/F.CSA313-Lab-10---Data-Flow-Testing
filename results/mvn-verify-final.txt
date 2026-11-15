@@ -33,13 +33,13 @@
 [[1;34mINFO[m]  T E S T S
 [[1;34mINFO[m] -------------------------------------------------------
 [[1;34mINFO[m] Running mn.edu.must.sqat.[1mGcdTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.456 s -- in mn.edu.must.sqat.[1mGcdTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.232 s -- in mn.edu.must.sqat.[1mGcdTest[m
 [[1;34mINFO[m] Running mn.edu.must.sqat.[1mBonusTest[m
-[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.171 s -- in mn.edu.must.sqat.[1mBonusTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m9[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in mn.edu.must.sqat.[1mBonusTest[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] Results:
 [[1;34mINFO[m] 
-[[1;34mINFO[m] [1;32mTests run: 11, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
 [[1;34mINFO[m] 
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mlab10-dataflow[0;1m ---[m
@@ -51,6 +51,6 @@
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  9.219 s
-[[1;34mINFO[m] Finished at: 2026-11-15T16:22:47+08:00
+[[1;34mINFO[m] Total time:  9.345 s
+[[1;34mINFO[m] Finished at: 2026-11-15T19:19:30+08:00
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
