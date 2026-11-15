@@ -1,0 +1,70 @@
+digraph BonusCFG {
+    graph [
+        label="Control Flow Graph: bonus()",
+        labelloc=t,
+        fontsize=18,
+        rankdir=TB
+    ];
+
+    node [shape=box, style="rounded", fontsize=9];
+    edge [fontsize=8];
+
+    Start [label="Start"];
+    Validate [label="L32: attendance == null || threshold < 0 ?"];
+    Throw [label="L33: throw IllegalArgumentException"];
+    Init [label="L35-L37:\npresent=0\nstreak=0\nbest=0"];
+    Loop [label="L38: for (int a : attendance)\nP-use: hasNext?"];
+    CheckA [label="L39: a > 0 ?"];
+    Present [label="L40-L41:\npresent = present + 1\nstreak = streak + 1"];
+    CheckBest [label="L42: streak > best ?"];
+    UpdateBest [label="L43: best = streak"];
+    Reset [label="L46: streak = 0"];
+    ScoreInit [label="L49: score = 0"];
+    CheckPresent [label="L50: present >= threshold ?"];
+    Score5 [label="L51: score = 5"];
+    CheckStreak [label="L53: best >= 5 ?"];
+    Score3 [label="L54: score = score + 3"];
+    Return [label="L56: return score"];
+    End [label="End"];
+
+    Start -> Validate;
+    Validate -> Throw [label="True: nullAttendanceThrowsException(), negativeThresholdThrowsException()"];
+    Throw -> End;
+    Validate -> Init [label="False: valid input tests"];
+    Init -> Loop;
+
+    Loop -> CheckA [
+        label="True: next element; a DEF (L38)\nP-use: attendanceWithFiveConsecutiveDays(), attendanceWithAbsence(), attendanceBelowThreshold(), absenceResetsConsecutiveStreak(), fiveConsecutiveDaysBelowThreshold(), totalAttendanceIsNotLongestStreak()"
+    ];
+
+    Loop -> ScoreInit [
+        label="False: iteration finished\nall valid input tests"
+    ];
+
+    CheckA -> Present [
+        label="True: attendanceWithFiveConsecutiveDays(), attendanceWithAbsence(), attendanceBelowThreshold(), absenceResetsConsecutiveStreak(), fiveConsecutiveDaysBelowThreshold(), totalAttendanceIsNotLongestStreak()"
+    ];
+
+    CheckA -> Reset [
+        label="False: attendanceWithAbsence(), absenceResetsConsecutiveStreak(), totalAttendanceIsNotLongestStreak()"
+    ];
+
+    Present -> CheckBest;
+
+    CheckBest -> UpdateBest [label="True: attendanceWithFiveConsecutiveDays(), fiveConsecutiveDaysBelowThreshold()"];
+    CheckBest -> Loop [label="False: attendanceWithAbsence(), absenceResetsConsecutiveStreak(), totalAttendanceIsNotLongestStreak()"];
+
+    UpdateBest -> Loop;
+    Reset -> Loop;
+
+    ScoreInit -> CheckPresent;
+    CheckPresent -> Score5 [label="True: attendanceWithFiveConsecutiveDays(), attendanceWithAbsence()"];
+    CheckPresent -> CheckStreak [label="False: attendanceBelowThreshold(), absenceResetsConsecutiveStreak(), fiveConsecutiveDaysBelowThreshold(), totalAttendanceIsNotLongestStreak()"];
+    Score5 -> CheckStreak;
+
+    CheckStreak -> Score3 [label="True: attendanceWithFiveConsecutiveDays(), fiveConsecutiveDaysBelowThreshold()"];
+    CheckStreak -> Return [label="False: attendanceWithAbsence(), attendanceBelowThreshold(), absenceResetsConsecutiveStreak(), totalAttendanceIsNotLongestStreak()"];
+
+    Score3 -> Return;
+    Return -> End;
+}
