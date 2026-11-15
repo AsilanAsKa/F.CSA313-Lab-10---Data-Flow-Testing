@@ -1,6 +1,7 @@
 # Лаборатори №10 — Data Flow Testing
 
 **Оюутан:**   C.Асилан
+**Оюутаны код:** B232270115
 **Хичээл:** F.CSA313 — Software Quality Assurance and Testing  
 **Сэдэв:** Data Flow Testing — Definition-Use Pairs
 
@@ -35,7 +36,7 @@ GCD функц нь хоёр бүхэл тооны хамгийн их ерөн�
 
 | Хувьсагч | Definition | Use |
 |---|---|---|
-| x | L13 (parameter), L17 | L16, L20 |
+| x | L13 (parameter), L17 | L16, L17, L20 |
 | y | L13 (parameter), L18 | L15, L16, L17 |
 | tmp | L16 | L18 |
 
@@ -46,8 +47,10 @@ GCD функц нь хоёр бүхэл тооны хамгийн их ерөн�
 | Хувьсагч | DU хос |
 |---|---|
 | x | L13 → L16 |
+| x | L13 → L17 |
 | x | L13 → L20 |
 | x | L17 → L16 |
+| x | L17 → L17 |
 | x | L17 → L20 |
 | y | L13 → L15 |
 | y | L13 → L16 |
@@ -198,15 +201,15 @@ Mutation Testing ашиглан үндсэн кодод түр өөрчлөлт 
 
 | Үзүүлэлт | Хамрагдсан | Нийт |
 |---|---:|---:|
-| Instructions | 78 | 81 |
+| Instructions | 69 | 72 |
 | Branches | 16 | 16 |
-| Lines | 23 | 24 |
+| Lines | 24 | 25 |
 | Complexity | 10 | 11 |
 | Methods | 2 | 3 |
 
 Branch coverage = 100%.
 
-Line coverage = 95.83% ≈ 96%.
+Line coverage = 96%.
 
 Нэг мөрийн coverage дутуу байгаа нь implicit constructor-той холбоотой бөгөөд лабораторийн зааварт зөвшөөрсөн тохиолдол юм.
 
